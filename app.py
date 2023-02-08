@@ -51,13 +51,12 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 #TEST
 date_file = open("Date_file.txt","w", newline="")
 with open(log_file, 'r') as file:
-  Contents = file.read()
-  lined = Contents.split("\n")
-  for line in lined:
-      matches = re.findall("Oct", file.read())
-      date_file.write(str(matches))
-      date_file.write("\n")
-        
+  matches = re.findall(r"\[\s*(\d+/\D+/.*?)\]", file.read())
+  for match in matches: 
+    date_file.write(match + "\n")
+   
+
+      
 
     
 
