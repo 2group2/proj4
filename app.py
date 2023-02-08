@@ -2,9 +2,10 @@
 # and that's why a majority of the work was under Jai's commit.
 
 # library imports
-from pip._vendor import requests
+# from pip._vendor import requests
 from urllib.request import urlretrieve
 import os
+import re
 
 # variable initialization
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
@@ -41,8 +42,22 @@ with open(log_file, "r") as file:
   request_total = len(file.readlines())
 
 # TODO: Output for marketing
-print("Log Data from AWS")
+print("\nLog Data from AWS")
 print("\nTotal requests from last six months", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
 
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
+
+#TEST
+date_file = open("Date_file.txt","w", newline="")
+with open(log_file, 'r') as file:
+  Contents = file.read()
+  lined = Contents.split("\n")
+  for line in lined:
+      matches = re.findall("Oct", file.read())
+      date_file.write(str(matches))
+      date_file.write("\n")
+        
+
+    
+
