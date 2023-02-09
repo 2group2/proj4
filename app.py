@@ -58,7 +58,7 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # Responsible: Paula
 
 # 2. How many requests were made on a week-by-week basis? Per month?
-# Responsible: [NAME] (week) and Paula (month)
+# Responsible: Jai (week) and Paula (month)
 
 # 3. What percentage of the requests were not successful (any 4xx status code)?
 # Responsible: Ivan
