@@ -46,3 +46,31 @@ print("\nTotal requests from last six months", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
 
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
+#
+#
+#
+# Part 2
+#
+#
+#
+
+# 1. How many requests were made on each day? 
+# Responsible: Paula
+
+# 2. How many requests were made on a week-by-week basis? Per month?
+# Responsible: [NAME] (week) and Paula (month)
+
+# 3. What percentage of the requests were not successful (any 4xx status code)?
+# Responsible: [NAME]
+
+# 4. What percentage of the requests were redirected elsewhere (any 3xx codes)?
+# Responsible: [NAME]
+
+# 5. What was the most-requested file?
+# Responsible: [NAME]
+
+# 6. What was the least-requested file? 
+# Responsible: [NAME]
+
+# 7. logs broken into separate files by month
+# Responsible: Jai and Paula
