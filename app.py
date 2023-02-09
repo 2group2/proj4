@@ -61,10 +61,10 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # Responsible: [NAME] (week) and Paula (month)
 
 # 3. What percentage of the requests were not successful (any 4xx status code)?
-# Responsible: [NAME]
+# Responsible: Ivan
 
 # 4. What percentage of the requests were redirected elsewhere (any 3xx codes)?
-# Responsible: [NAME]
+# Responsible: Ivan
 
 # 5. What was the most-requested file?
 # Responsible: [NAME]
