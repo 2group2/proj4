@@ -55,7 +55,7 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 #
 
 # 1. How many requests were made on each day? 
-# Responsible: Paula
+# Responsible: [NAME]
 
 # 2. How many requests were made on a week-by-week basis? Per month?
 # Responsible: Jai (week) and Paula (month)
