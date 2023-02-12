@@ -67,7 +67,10 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # Responsible: Ivan
 
 # 5. What was the most-requested file?
-# Responsible: [NAME]
+# Responsible: [Brandon]
+import re
+
+.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*
 
 # 6. What was the least-requested file? 
 # Responsible: [NAME]
