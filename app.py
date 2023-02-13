@@ -60,7 +60,7 @@ with open(log_file, "r") as file:
 
 # TODO: Output for marketing
 print("\nLog Data from AWS")
-print("\nTotal requests from last six months", last_six_month_request_counter)
+print("\nTotal requests from last six months:", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
 print("\nTotal requests made each day:")
 print("\nTotal requests made each week:")
