@@ -10,6 +10,19 @@ import os
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 log_file = 'http_access_log.txt'
 end_date_line = 323330
+date_file = open("Date_file.txt","w", newline="")
+jan_file=open("Jan.txt", "w")
+feb_file=open("Feb.txt", "w") 
+mar_file=open("Mar.txt", "w")
+apr_file=open("Apr.txt", "w")
+may_file=open("May.txt", "w") 
+jun_file=open("Jun.txt", "w") 
+jul_file=open("Jul.txt", "w")
+aug_file=open("Aug.txt", "w") 
+sep_file=open("Sep.txt", "w") 
+oct_file=open("Oct.txt", "w")
+nov_file=open("Nov.txt", "w") 
+dec_file=open("Dec.txt", "w") 
 
 # retrieve log file and save to machine
 
@@ -41,30 +54,26 @@ with open(log_file, "r") as file:
   request_total = len(file.readlines())
 
 # TODO: Output for marketing
-print("Log Data from AWS")
+print("\nLog Data from AWS")
 print("\nTotal requests from last six months", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
 
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
-#
-#
-#
-# Part 2
-#
-#
-#
 
-# 1. How many requests were made on each day? 
-# Responsible: [NAME]
-
-# 2. How many requests were made on a week-by-week basis? Per month?
-# Responsible: Jai (week) and Paula (month)
-
-# 3. What percentage of the requests were not successful (any 4xx status code)?
-# Responsible: Ivan
-
-# 4. What percentage of the requests were redirected elsewhere (any 3xx codes)?
-# Responsible: Ivan
+#TEST
+# month = "Oct"
+# query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
+   
+date_file = open("Date_file.txt","w", newline="")
+with open(log_file, 'r') as file:
+  Content = file.read()
+  lines = Content.split("\n")
+  
+  for line in lines:
+    matches = re.search(r'Oct', line)
+    if matches:
+      date_file.write(line + "\n")
+   
 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
