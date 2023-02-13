@@ -5,12 +5,14 @@
 from pip._vendor import requests
 from urllib.request import urlretrieve
 import os
+import re
 
 # variable initialization
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 log_file = 'http_access_log.txt'
 end_date_line = 323330
-date_file = open("Date_file.txt","w", newline="")
+
+# create all files
 jan_file=open("Jan.txt", "w")
 feb_file=open("Feb.txt", "w") 
 mar_file=open("Mar.txt", "w")
@@ -53,36 +55,71 @@ with open(log_file, 'r') as file:
 with open(log_file, "r") as file:
   request_total = len(file.readlines())
 
+
+  
+
 # TODO: Output for marketing
 print("\nLog Data from AWS")
 print("\nTotal requests from last six months", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
-
+print("\nTotal requests made each day:")
+print("\nTotal requests made each week:")
+print("\nTotal requests made each month:")
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
 
 #TEST
 # month = "Oct"
 # query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
    
-date_file = open("Date_file.txt","w", newline="")
-with open(log_file, 'r') as file:
-  Content = file.read()
-  lines = Content.split("\n")
-  
-  for line in lines:
-    matches = re.search(r'Oct', line)
-    if matches:
-      date_file.write(line + "\n")
-   
 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
-import re
 
-.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*
+#.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*
 
 # 6. What was the least-requested file? 
 # Responsible: [NAME]
 
 # 7. logs broken into separate files by month
 # Responsible: Jai and Paula
+Log_pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'   
+with open(log_file, 'r') as file:
+  Content = file.read()
+  lines = Content.split("\n")
+for line in lines:
+    matches = re.match(Log_pattern, line)
+
+    if not matches:
+        continue
+
+    matches.group(0) 
+    matches.group(3) 
+    time = matches.group(3)
+    month = time[3:6]
+
+    if (month == "Jan"): 
+        jan_file.write(line+'\n')
+    elif (month == "Feb"): 
+        feb_file.write(line+'\n')
+    elif (month == "Mar"): 
+        mar_file.write(line+'\n')
+    elif (month == "Apr"): 
+        apr_file.write(line+'\n')
+    elif (month == "May"): 
+        may_file.write(line+'\n')
+    elif (month == "Jun"): 
+        jun_file.write(line+'\n')
+    elif (month == "Jul"): 
+        jul_file.write(line+'\n')
+    elif (month == "Aug"): 
+        aug_file.write(line+'\n')
+    elif (month == "Sep"): 
+        sep_file.write(line+'\n')
+    elif (month == "Oct"): 
+        oct_file.write(line+'\n')
+    elif (month == "Nov"): 
+        nov_file.write(line+'\n')
+    elif (month == "Dec"): 
+        dec_file.write(line+'\n')
+    else:
+        continue
