@@ -124,6 +124,7 @@ for line in lines:
     else:
         continue
 
+# TODO: Percentage of requests that had an error code or where redirected elsewhere
 error3count = 0
 error4count = 0
 
