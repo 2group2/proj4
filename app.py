@@ -123,3 +123,22 @@ for line in lines:
         dec_file.write(line+'\n')
     else:
         continue
+
+error3count = 0
+error4count = 0
+
+with open(log_file, 'r') as file:
+    Contents = file.read()
+    lined = Contents.split("\n")
+    for line in lined:
+        matches = re.search(r'\"\s3\d{2}', line)
+        matches2 = re.search(r'\"\s4\d{2}', line)
+        if matches:
+            error3count += 1
+        if matches2:
+            error4count += 1
+
+percent3 = ("{:.2f}%".format(error3count/request_total * 100))
+percent4 = ("{:.2f}%".format(error4count/request_total * 100))
+print(percent4, "of requests were not successful")
+print(percent3, "of requests were redirected elsewhere")
