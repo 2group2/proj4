@@ -78,7 +78,7 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 #.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*
 
 # 6. What was the least-requested file? 
-# Responsible: [NAME]
+# Responsible: [Brad]
 
 # 7. logs broken into separate files by month
 # Responsible: Jai and Paula
