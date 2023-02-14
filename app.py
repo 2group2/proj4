@@ -74,6 +74,7 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # 1. How many requests were made on each day? 
 # Responsible: Wesley?
 
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 # 7. logs broken into separate files by month
 # Responsible: Jai and Paula
@@ -122,7 +123,13 @@ for line in lines:
 # 2. How many requests were made on a week-by-week basis? Per month?
 # Responsible: Jai (week) and Paula (month)
 
+# Per Month Basis
 
+print("\nTotal requests made each month:")
+for month in months:
+    filename = month + ".txt"
+    with open(filename, "r") as file:
+        print(month, ": ", len(file.readlines()))
 
 # 3. What percentage of the requests were not successful (any 4xx status code)?
 # Responsible: Ivan
