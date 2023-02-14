@@ -6,7 +6,6 @@ from pip._vendor import requests
 from urllib.request import urlretrieve
 import os
 import re
-import collections
 
 # variable initialization
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
