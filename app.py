@@ -70,7 +70,18 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 #TEST
 # month = "Oct"
 # query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
-   
+
+# 1. How many requests were made on each day? 
+# Responsible: [NAME]
+
+# 2. How many requests were made on a week-by-week basis? Per month?
+# Responsible: Jai (week) and Paula (month)
+
+# 3. What percentage of the requests were not successful (any 4xx status code)?
+# Responsible: Ivan
+
+# 4. What percentage of the requests were redirected elsewhere (any 3xx codes)?
+# Responsible: Ivan
 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
