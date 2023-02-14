@@ -88,9 +88,10 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 
 
 
+# query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
 
-# 5. What was the most-requested file?
-# Responsible: [Brandon]
+# 1. How many requests were made on each day? 
+# Responsible: Wesley?
 
 
 def getCountOfFiles(log_file):
@@ -145,6 +146,7 @@ print("Least Requested File Name", min(file_count, key=file_count.get))
 
 # 6. What was the least-requested file? 
 # Responsible: [Brad]
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 
@@ -197,6 +199,11 @@ for line in lines:
     
 # Per Month Basis
 
+# 2. How many requests were made on a week-by-week basis? Per month?
+# Responsible: Jai (week) and Paula (month)
+
+# Per Month Basis
+
 print("\nTotal requests made each month:")
 for month in months:
     filename = month + ".txt"
@@ -204,6 +211,46 @@ for month in months:
         print(month, ": ", len(file.readlines()))
 
 #3. & 4. Percentage of requests
+# 3. What percentage of the requests were not successful (any 4xx status code)?
+# Responsible: Ivan
+
+# 4. What percentage of the requests were redirected elsewhere (any 3xx codes)?
+# Responsible: Ivan
+
+# 5. What was the most-requested file?
+# Responsible: [Brandon]
+
+#things = {}
+#for line in open(log_file):
+#    pieces = re.split('.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*',line)
+#    filename = pieces(3)
+#if filename in things:
+#     things[filename] += 1
+#else:
+#     things[filename] = 1
+#print(filename, 'was the most requested file.')
+
+# 6. What was the least-requested file? 
+# Responsible: [Brad]
+#import collections
+
+#def find_least_common_line(http_access_log):
+   # with open(http_access_log, 'r') as file:
+      #  lines = file.readlines();
+    
+    ## Use the Counter class to count the occurrences of each line
+    #http_access_log = collections.Counter(lines)
+    
+    # Get the line with the lowest count
+    #least_common_line = min(line_counts, key=line_counts.get)
+    
+    #return least_common_line
+
+#http_access_log = "file.txt"
+#least_common_line = find_least_common_line(http_access_log)
+#print("The least common line is:", least_common_line)
+
+
 # TODO: Percentage of requests that had an error code or where redirected elsewhere
 error3count = 0
 error4count = 0
