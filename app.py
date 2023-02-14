@@ -82,11 +82,6 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
-#TEST
-# month = "Oct"
-# query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*" 
-
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] 
 
 # 6. What was the least-requested file? 
 # Responsible: [Brad]
@@ -126,8 +121,6 @@ def getCountOfFiles(log_file):
 file_count = getCountOfFiles(log_file)
 print("Most Requested File Name", max(file_count, key=file_count.get))
 print("Least Requested File Name", min(file_count, key=file_count.get))
-
-
 
 # 7. logs broken into separate files by month
 
