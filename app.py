@@ -72,7 +72,7 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
 
 # 1. How many requests were made on each day? 
-# Responsible: [NAME]
+# Responsible: Wesley?
 
 # 2. How many requests were made on a week-by-week basis? Per month?
 # Responsible: Jai (week) and Paula (month)
