@@ -75,7 +75,15 @@ print("\nTotal number of requests made in the last 6 months (Req. Total and Log 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
 
-#.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*
+#things = {}
+#for line in open(log_file):
+#    pieces = re.split('.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*',line)
+#    filename = pieces(3)
+#if filename in things:
+#     things[filename] += 1
+#else:
+#     things[filename] = 1
+#print(filename, 'was the most requested file.')
 
 # 6. What was the least-requested file? 
 # Responsible: [Brad]
