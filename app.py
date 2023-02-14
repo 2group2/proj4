@@ -80,19 +80,16 @@ print("\nAverage requests made each week:", weekCalc)
 print("\nAverage requests made each month:", monthCalc)
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
 
+# 5. What was the most-requested file?
+# Responsible: [Brandon]
 #TEST
 # month = "Oct"
 # query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*" 
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] 
 
-
-
-# query = ".*\[[0-9]+/(" + month + ")/[0-9]{4}:.* \-[0-9]{4}\] \".*\" .*"  
-
-# 1. How many requests were made on each day? 
-# Responsible: Wesley?
-
+# 6. What was the least-requested file? 
+# Responsible: [Brad]
 
 def getCountOfFiles(log_file):
     file_count = {}
@@ -132,27 +129,9 @@ print("Least Requested File Name", min(file_count, key=file_count.get))
 
 
 
-# things = {}
-# for line in open(log_file):
-#    pieces = re.split('.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*',line)
-#    filename = pieces(4)
-# if filename in things:
-#     things[filename] += 1
-# else:
-#     things[filename] = 1
-
-# print(filename, 'was the most requested file.'+len(things))
-
-
-# 6. What was the least-requested file? 
-# Responsible: [Brad]
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
-
-
-
 # 7. logs broken into separate files by month
 
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 # Responsible: Jai and Paula
 Log_pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'   
@@ -165,8 +144,6 @@ for line in lines:
     if not matches:
         continue
 
-    
-     
     time = matches.group(3)
     month = time[3:6]
 
@@ -219,36 +196,6 @@ for month in months:
 
 # 5. What was the most-requested file?
 # Responsible: [Brandon]
-
-#things = {}
-#for line in open(log_file):
-#    pieces = re.split('.*\[[0-9]+/[a-zA-Z]+/[0-9]{4}:.* \-[0-9]{4}\] (\".*\") .*',line)
-#    filename = pieces(3)
-#if filename in things:
-#     things[filename] += 1
-#else:
-#     things[filename] = 1
-#print(filename, 'was the most requested file.')
-
-# 6. What was the least-requested file? 
-# Responsible: [Brad]
-#import collections
-
-#def find_least_common_line(http_access_log):
-   # with open(http_access_log, 'r') as file:
-      #  lines = file.readlines();
-    
-    ## Use the Counter class to count the occurrences of each line
-    #http_access_log = collections.Counter(lines)
-    
-    # Get the line with the lowest count
-    #least_common_line = min(line_counts, key=line_counts.get)
-    
-    #return least_common_line
-
-#http_access_log = "file.txt"
-#least_common_line = find_least_common_line(http_access_log)
-#print("The least common line is:", least_common_line)
 
 
 # TODO: Percentage of requests that had an error code or where redirected elsewhere
