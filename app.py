@@ -80,12 +80,6 @@ print("\nAverage requests made each week:", weekCalc)
 print("\nAverage requests made each month:", monthCalc)
 print("\nTotal number of requests made in the last 6 months (Req. Total and Log Line)", request_total - end_date_line)
 
-# 5. What was the most-requested file?
-# Responsible: [Brandon]
-
-# 6. What was the least-requested file? 
-# Responsible: [Brad]
-
 def getCountOfFiles(log_file):
     file_count = {}
     with open(log_file, 'r') as file:
@@ -115,11 +109,14 @@ def getCountOfFiles(log_file):
                 file_count[filename] = 1
         
     return file_count
-    
-# prints dictionary
-# print(getCountOfFiles(log_file))
+
 file_count = getCountOfFiles(log_file)
+# 5. What was the most-requested file?
+# Responsible: [Brandon]
 print("Most Requested File Name", max(file_count, key=file_count.get))
+
+# 6. What was the least-requested file? 
+# Responsible: [Brad]
 print("Least Requested File Name", min(file_count, key=file_count.get))
 
 # 7. logs broken into separate files by month
