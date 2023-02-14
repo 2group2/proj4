@@ -12,20 +12,6 @@ URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 log_file = 'http_access_log.txt'
 end_date_line = 323330
 
-# create all files
-jan_file=open("Jan.txt", "w")
-feb_file=open("Feb.txt", "w") 
-mar_file=open("Mar.txt", "w")
-apr_file=open("Apr.txt", "w")
-may_file=open("May.txt", "w") 
-jun_file=open("Jun.txt", "w") 
-jul_file=open("Jul.txt", "w")
-aug_file=open("Aug.txt", "w") 
-sep_file=open("Sep.txt", "w") 
-oct_file=open("Oct.txt", "w")
-nov_file=open("Nov.txt", "w") 
-dec_file=open("Dec.txt", "w") 
-
 # retrieve log file and save to machine
 
 if os.path.exists(log_file):
@@ -120,11 +106,15 @@ print("Most Requested File Name", max(file_count, key=file_count.get))
 print("Least Requested File Name", min(file_count, key=file_count.get))
 
 # 7. logs broken into separate files by month
-
+# Responsible: Jai and Paula
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-# Responsible: Jai and Paula
-Log_pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'   
+# creates files
+for month in months:
+    file=open(month+".txt", "w")
+
+Log_pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'  
+ 
 with open(log_file, 'r') as file:
   Content = file.read()
   lines = Content.split("\n")
@@ -136,36 +126,10 @@ for line in lines:
 
     time = matches.group(3)
     month = time[3:6]
-
-    if (month == "Jan"): 
-        jan_file.write(line+'\n')
-    elif (month == "Feb"): 
-        feb_file.write(line+'\n')
-    elif (month == "Mar"): 
-        mar_file.write(line+'\n')
-    elif (month == "Apr"): 
-        apr_file.write(line+'\n')
-    elif (month == "May"): 
-        may_file.write(line+'\n')
-    elif (month == "Jun"): 
-        jun_file.write(line+'\n')
-    elif (month == "Jul"): 
-        jul_file.write(line+'\n')
-    elif (month == "Aug"): 
-        aug_file.write(line+'\n')
-    elif (month == "Sep"): 
-        sep_file.write(line+'\n')
-    elif (month == "Oct"): 
-        oct_file.write(line+'\n')
-    elif (month == "Nov"): 
-        nov_file.write(line+'\n')
-    elif (month == "Dec"): 
-        dec_file.write(line+'\n')
-    else:
-        continue
     
-# Per Month Basis
-
+    f = open(month+".txt", "a")
+    f.write(line+'\n')
+    
 # 2. How many requests were made on a week-by-week basis? Per month?
 # Responsible: Jai (week) and Paula (month)
 
