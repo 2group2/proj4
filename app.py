@@ -71,7 +71,7 @@ monthCalc = int(monthCalc)
 
 
 
-# TODO: Output for marketing
+# Output for marketing
 print("\nLog Data from AWS")
 print("\nTotal requests from last six months:", last_six_month_request_counter)
 print("\nTotal requests made:", request_total)
